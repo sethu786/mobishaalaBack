@@ -202,7 +202,7 @@ app.get('/cart/', authenticateToken, async (request, response) => {
     const user = await db.get(userQuery, [username]);
 
     const cartQuery = `
-      SELECT product.name, product.price, cart.quantity,product.id
+      SELECT product.name, product.price, cart.quantity,product.id,product.url
       FROM cart
       INNER JOIN product ON cart.product_id = product.id
       WHERE cart.user_id = ?;
