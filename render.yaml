@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: your-backend-name
+    env: node
+    buildCommand: npm install --build-from-source
+    startCommand: node app.js
