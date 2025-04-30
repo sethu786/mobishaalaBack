@@ -1,0 +1,88 @@
+### Register a New User
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+  "username": "john_doe",
+  "password": "john12345",
+  "name": "John Doe"
+}
+
+###
+
+### Login User
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username": "sethu",
+  "password": "sethu123"
+}
+
+###
+
+### Get All Products
+GET http://localhost:3000/products/
+
+###
+
+### Get a Single Product (Example: Product ID = 1)
+GET http://localhost:3000/products/1/
+
+###
+
+### Add Product to Cart (Protected Route)
+POST http://localhost:3000/cart/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNldGh1IiwiaWF0IjoxNzQ1OTg5MTMyLCJleHAiOjE3NDU5OTYzMzJ9.VhjGIzBPIjKyP78hVMdr0gHdOjtqBVzC3V94YyKSSuQ
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "quantity": 2
+}
+
+###
+PUT http://localhost:3000/cart/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNldGh1IiwiaWF0IjoxNzQ1OTg5MTMyLCJleHAiOjE3NDU5OTYzMzJ9.VhjGIzBPIjKyP78hVMdr0gHdOjtqBVzC3V94YyKSSuQ
+Content-Type: application/json
+
+{
+  "quantity": 6
+}
+### Get Cart Items (Protected Route)
+GET http://localhost:3000/cart/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNldGh1IiwiaWF0IjoxNzQ1OTg5MTMyLCJleHAiOjE3NDU5OTYzMzJ9.VhjGIzBPIjKyP78hVMdr0gHdOjtqBVzC3V94YyKSSuQ
+
+### Place an Order (Protected Route)
+POST http://localhost:3000/order/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiaWF0IjoxNzQ1OTM4OTg3LCJleHAiOjE3NDU5NDYxODd9.HHVoztfk_6NDtsO7OWof78fsX7NmdQRZAQopLrpvIm8
+Content-Type: application/json
+
+{
+  "address": "123 Main Street, New York",
+  "paymentMethod": "Credit Card"
+}
+
+###
+
+### Get All Orders of Logged-In User (Protected Route)
+GET http://localhost:3000/orders/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG5fZG9lIiwiaWF0IjoxNzQ1OTM4OTg3LCJleHAiOjE3NDU5NDYxODd9.HHVoztfk_6NDtsO7OWof78fsX7NmdQRZAQopLrpvIm8
+
+###
+
+# Example JWT structure you will get after login:
+# {
+#   "jwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+# }
+
+### Get a Single Product (Example: Product ID = 1)
+GET http://localhost:3000/categories/
+
+###
+DELETE http://localhost:3000/cart/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNldGh1IiwiaWF0IjoxNzQ1OTQzMzA0LCJleHAiOjE3NDU5NTA1MDR9.THe8PsKv6buaJOvcqOU3_R4iaEF646MrC0UFFNTLjcY
+###
+### Get Username Profile
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNldGh1IiwiaWF0IjoxNzQ2MDA2MTA1LCJleHAiOjE3NDYwMTMzMDV9.GyMofRV63v5Wvmb9VaP6YJLmI_LVU9Qq3h5VHQOv6Wo
